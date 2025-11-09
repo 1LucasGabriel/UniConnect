@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lucas\\Desktop\\Faculdade BCC\\4 Semestre\\Plataforma de Desenvolvimento de Sistemas\\UniConnect\\UniConnect\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{02A91C07-D46D-4C4A-AABA-17900DB3E92D}|UniConnect\\UniConnect.csproj|c:\\users\\lucas\\desktop\\faculdade bcc\\4 semestre\\plataforma de desenvolvimento de sistemas\\uniconnect\\uniconnect\\uniconnect\\models\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A91C07-D46D-4C4A-AABA-17900DB3E92D}|UniConnect\\UniConnect.csproj|solutionrelative:uniconnect\\models\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A91C07-D46D-4C4A-AABA-17900DB3E92D}|UniConnect\\UniConnect.csproj|c:\\users\\lucas\\desktop\\faculdade bcc\\4 semestre\\plataforma de desenvolvimento de sistemas\\uniconnect\\uniconnect\\uniconnect\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A91C07-D46D-4C4A-AABA-17900DB3E92D}|UniConnect\\UniConnect.csproj|solutionrelative:uniconnect\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A91C07-D46D-4C4A-AABA-17900DB3E92D}|UniConnect\\UniConnect.csproj|c:\\users\\lucas\\desktop\\faculdade bcc\\4 semestre\\plataforma de desenvolvimento de sistemas\\uniconnect\\uniconnect\\uniconnect\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A91C07-D46D-4C4A-AABA-17900DB3E92D}|UniConnect\\UniConnect.csproj|solutionrelative:uniconnect\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Professor.cs",
+              "DocumentMoniker": "C:\\Users\\Lucas\\Desktop\\Faculdade BCC\\4 Semestre\\Plataforma de Desenvolvimento de Sistemas\\UniConnect\\UniConnect\\UniConnect\\Models\\Professor.cs",
+              "RelativeDocumentMoniker": "UniConnect\\Models\\Professor.cs",
+              "ToolTip": "C:\\Users\\Lucas\\Desktop\\Faculdade BCC\\4 Semestre\\Plataforma de Desenvolvimento de Sistemas\\UniConnect\\UniConnect\\UniConnect\\Models\\Professor.cs",
+              "RelativeToolTip": "UniConnect\\Models\\Professor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T14:47:08.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Aluno.cs",
+              "DocumentMoniker": "C:\\Users\\Lucas\\Desktop\\Faculdade BCC\\4 Semestre\\Plataforma de Desenvolvimento de Sistemas\\UniConnect\\UniConnect\\UniConnect\\Models\\Aluno.cs",
+              "RelativeDocumentMoniker": "UniConnect\\Models\\Aluno.cs",
+              "ToolTip": "C:\\Users\\Lucas\\Desktop\\Faculdade BCC\\4 Semestre\\Plataforma de Desenvolvimento de Sistemas\\UniConnect\\UniConnect\\UniConnect\\Models\\Aluno.cs",
+              "RelativeToolTip": "UniConnect\\Models\\Aluno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T14:45:41.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Lucas\\Desktop\\Faculdade BCC\\4 Semestre\\Plataforma de Desenvolvimento de Sistemas\\UniConnect\\UniConnect\\UniConnect\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "UniConnect\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Lucas\\Desktop\\Faculdade BCC\\4 Semestre\\Plataforma de Desenvolvimento de Sistemas\\UniConnect\\UniConnect\\UniConnect\\Models\\Usuario.cs",
+              "RelativeToolTip": "UniConnect\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T14:44:15.813Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
