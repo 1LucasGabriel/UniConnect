@@ -1,6 +1,7 @@
 🎓 UniConnect – Rede Acadêmica Colaborativa
 
 💡 Ideia
+
 A UniConnect é uma plataforma desenvolvida para conectar alunos e professores, permitindo a criação de grupos de estudo, troca de materiais e colaboração acadêmica.  
 O objetivo é fortalecer a interação entre membros da comunidade acadêmica, promovendo o compartilhamento de conhecimento e o apoio mútuo no processo de aprendizagem.
 
