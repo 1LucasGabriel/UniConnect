@@ -15,8 +15,17 @@ namespace UniConnect.Domain.Entities
         public string Senha { get; set; }
         public string FotoPerfilUrl { get; set; }
         public TipoUsuario TipoUsuario { get; set; }
-        public ICollection<DiscussaoEntity> Discussoes { get; set; }
+
+        // Navegações
+        public ICollection<DiscussaoEntity> DiscussoesCriadas { get; set; }
+        public ICollection<RespostaEntity> RespostasCriadas { get; set; }
+        public ICollection<PastaEstudoEntity> PastasCriadas { get; set; }
+        public ICollection<ArquivoEntity> ArquivosCriados { get; set; }
+
         public ICollection<MensagemEntity> MensagensEnviadas { get; set; }
         public ICollection<MensagemEntity> MensagensRecebidas { get; set; }
+
+        public ICollection<DiscussaoReacaoEntity> ReacoesDiscussao { get; set; }
+        public ICollection<RespostaReacaoEntity> ReacoesResposta { get; set; }
     }
 }

@@ -10,6 +10,9 @@ namespace UniConnect.Domain.Entities
     public class RespostaReacaoEntity: BaseEntity
     {
         public int RespostaId { get; set; }
+        public RespostaEntity Resposta { get; set; }
         public TipoReacao Tipo { get; set; }
+        public int UsuarioId { get; set; }
+        public UsuarioEntity Usuario { get; set; }
     }
 }

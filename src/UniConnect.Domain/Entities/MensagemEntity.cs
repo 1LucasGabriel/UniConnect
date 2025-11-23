@@ -11,5 +11,6 @@ namespace UniConnect.Domain.Entities
         public string Conteudo { get; set; }
         public bool Visualizada { get; set; }
         public int UsuarioDestinoId { get; set; }
+        public UsuarioEntity UsuarioDestino { get; set; }
     }
 }

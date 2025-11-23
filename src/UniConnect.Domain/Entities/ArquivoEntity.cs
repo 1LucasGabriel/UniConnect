@@ -13,5 +13,6 @@ namespace UniConnect.Domain.Entities
         public string Url { get; set; }
         public long TamanhoBytes { get; set; }
         public int PastaEstudoId { get; set; }
+        public PastaEstudoEntity PastaEstudo { get; set; }
     }
 }

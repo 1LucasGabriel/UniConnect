@@ -7,9 +7,11 @@ using UniConnect.Domain.Enums;
 
 namespace UniConnect.Domain.Entities
 {
-    public class PastaEstudo: BaseEntity
+    public class PastaEstudoEntity: BaseEntity
     {
-        public int PastaEstudoPaiId { get; set; }
+        public int? PastaEstudoPaiId { get; set; }
+        public PastaEstudoEntity PastaPai { get; set; }
+        public ICollection<PastaEstudoEntity> SubPastas { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public TipoVisibilidade Visibilidade { get; set; }
