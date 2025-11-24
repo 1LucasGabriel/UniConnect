@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using UniConnect.Argument.Argument;
-using UniConnect.Domain.Entity.Entity;
+using UniConnect.Domain.Entity;
 
 namespace UniConnect.Domain;
 

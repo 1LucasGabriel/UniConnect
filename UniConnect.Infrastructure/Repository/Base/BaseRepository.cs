@@ -1,8 +1,7 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using UniConnect.Domain.Entity;
 using UniConnect.Domain.Interface.Repository;
 using UniConnect.Infrastructure.Context;
-using UniConnect.Infrastructure.Entity;
 
 namespace UniConnect.Infrastructure.Repository;
 

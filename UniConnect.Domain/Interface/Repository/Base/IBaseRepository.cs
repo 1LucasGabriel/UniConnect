@@ -1,4 +1,4 @@
-﻿using UniConnect.Infrastructure.Entity;
+﻿using UniConnect.Domain.Entity;
 
 namespace UniConnect.Domain.Interface.Repository;
 

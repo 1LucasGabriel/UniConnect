@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
 using System.Reflection;
 using UniConnect.Argument;
+using UniConnect.Domain.Entity;
 using UniConnect.Domain.Interface.Repository;
 using UniConnect.Domain.Interface.Service;
-using UniConnect.Infrastructure.Entity;
 
 namespace UniConnect.Domain.Service;
 
@@ -68,7 +67,7 @@ public abstract class BaseService<TRepository, TEntity, TInputCreate, TInputUpda
             throw new Exception("Lista inválida");
 
         List<TEntity> listDelete = _repository.GetListByListId((from i in listInputDelete ?? [] select i.Id).ToList()!)!;
-        foreach(var i in listInputDelete!)
+        foreach (var i in listInputDelete!)
         {
             TEntity? originalEntity = (from j in listDelete where i.Id == j.Id select j).FirstOrDefault();
             if (originalEntity == null)

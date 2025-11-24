@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using UniConnect.Argument;
 using UniConnect.Domain.Interface.Service;
 
@@ -6,7 +7,7 @@ namespace UniConnect.Api.Controller.Base;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-//[Authorize]
+[Authorize]
 public class BaseController<TService, TInputCreate, TInputUpdate, TInputDelete, TOutput> : ControllerBase
     where TService : IBaseService<TInputCreate, TInputUpdate, TInputDelete, TOutput>
     where TInputCreate : BaseInputCreate<TInputCreate>

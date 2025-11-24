@@ -1,7 +1,7 @@
-﻿using UniConnect.Argument.Argument;
-using UniConnect.Domain.Interface.Service;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using UniConnect.Argument.Argument;
+using UniConnect.Domain.Interface.Service;
 
 namespace UniConnect.Api.Controller.Controller;
 

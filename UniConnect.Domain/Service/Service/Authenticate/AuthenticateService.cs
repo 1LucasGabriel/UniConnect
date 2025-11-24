@@ -1,12 +1,12 @@
-﻿using UniConnect.Argument.Argument;
-using UniConnect.Domain.Interface.Repository.Repository;
-using UniConnect.Domain.Interface.Service;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using UniConnect.Domain.Entity.Entity;
+using UniConnect.Argument.Argument;
+using UniConnect.Domain.Entity;
+using UniConnect.Domain.Interface.Repository.Repository;
+using UniConnect.Domain.Interface.Service;
 
 namespace UniConnect.Domain.Service;
 

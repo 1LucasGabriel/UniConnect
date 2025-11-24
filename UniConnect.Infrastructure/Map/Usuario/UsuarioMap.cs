@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UniConnect.Domain.Entity.Entity;
+using UniConnect.Domain.Entity;
 
 namespace UniConnect.Infrastructure.Map;
 
@@ -9,7 +9,7 @@ public class UsuarioMap : IEntityTypeConfiguration<Usuario>
 {
     public void Configure(EntityTypeBuilder<Usuario> builder)
     {
-        builder.ToTable("Usuario");
+        builder.ToTable("usuario");
 
         builder.HasKey(x => x.Id);
 
@@ -21,36 +21,40 @@ public class UsuarioMap : IEntityTypeConfiguration<Usuario>
 
         builder.Property(x => x.TipoUsuario).IsRequired();
 
-        // Relacionamentos gerais
-        //builder.HasMany(x => x.DiscussoesCriadas)
-        //    .WithOne(x => x.UsuarioCriacao)
-        //    .HasForeignKey(x => x.UsuarioCriacaoId)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        builder.Property(x => x.DataCriacao)
+                .IsRequired();
+        builder.Property(x => x.DataAlteracao);
 
-        //builder.HasMany(x => x.RespostasCriadas)
-        //    .WithOne(x => x.UsuarioCriacao)
-        //    .HasForeignKey(x => x.UsuarioCriacaoId)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        //Relacionamentos gerais
+        builder.HasMany(x => x.DiscussoesCriadas)
+            .WithOne(x => x.UsuarioCriacao)
+            .HasForeignKey(x => x.UsuarioCriacaoId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        //builder.HasMany(x => x.PastasCriadas)
-        //    .WithOne(x => x.UsuarioCriacao)
-        //    .HasForeignKey(x => x.UsuarioCriacaoId)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(x => x.RespostasCriadas)
+            .WithOne(x => x.UsuarioCriacao)
+            .HasForeignKey(x => x.UsuarioCriacaoId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        //builder.HasMany(x => x.ArquivosCriados)
-        //    .WithOne(x => x.UsuarioCriacao)
-        //    .HasForeignKey(x => x.UsuarioCriacaoId)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(x => x.PastasCriadas)
+            .WithOne(x => x.UsuarioCriacao)
+            .HasForeignKey(x => x.UsuarioCriacaoId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        //builder.HasMany(x => x.MensagensEnviadas)
-        //    .WithOne(x => x.UsuarioCriacao)
-        //    .HasForeignKey(x => x.UsuarioCriacaoId)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(x => x.ArquivosCriados)
+            .WithOne(x => x.UsuarioCriacao)
+            .HasForeignKey(x => x.UsuarioCriacaoId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        //builder.HasMany(x => x.MensagensRecebidas)
-        //    .WithOne(x => x.UsuarioDestino)
-        //    .HasForeignKey(x => x.UsuarioDestinoId)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(x => x.MensagensEnviadas)
+            .WithOne(x => x.UsuarioCriacao)
+            .HasForeignKey(x => x.UsuarioCriacaoId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasMany(x => x.MensagensRecebidas)
+            .WithOne(x => x.UsuarioDestino)
+            .HasForeignKey(x => x.UsuarioDestinoId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder.Ignore(x => x.UsuarioCriacao);
         builder.Ignore(x => x.UsuarioAlteracao);
