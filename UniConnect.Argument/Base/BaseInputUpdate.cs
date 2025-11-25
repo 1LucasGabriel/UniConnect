@@ -3,7 +3,7 @@
 public abstract class BaseInputUpdate<TInputUpdate>
     where TInputUpdate : BaseInputUpdate<TInputUpdate>
 {
-    public int Id { get; set; }
+    public int Id { get; private set; }
 
     public BaseInputUpdate() { }
 

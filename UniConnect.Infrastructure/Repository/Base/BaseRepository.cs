@@ -95,5 +95,11 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
     {
         _apiDataGuid = apiDataGuid;
     }
+
+    protected bool DynamicSetPropertyValue<TType>(TEntity? entity, string propertyName, TType value)
+    {
+        typeof(TEntity).GetProperty(propertyName)!.SetValue(entity, value);
+        return true;
+    }
     #endregion
 }

@@ -9,7 +9,7 @@ public class OutputPastaEstudo : BaseOutput<OutputPastaEstudo>
     public string Descricao { get; private set; }
     public TipoVisibilidade Visibilidade { get; private set; }
 
-    public OutputPastaEstudo? PastaPai { get; set; }
+    public OutputPastaEstudo? PastaPai { get; private set; }
 
     public OutputPastaEstudo() { }
 

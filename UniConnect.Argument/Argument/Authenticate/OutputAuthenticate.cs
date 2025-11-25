@@ -2,7 +2,7 @@
 
 public class OutputAuthenticate
 {
-    public string Token { get; set; }
+    public string Token { get; private set; }
 
     public OutputAuthenticate(string token)
     {

@@ -17,7 +17,7 @@ public class RespostaRepository : BaseRepository<Resposta>, IRespostaRepository
         foreach (var resposta in todasRespostas)
         {
             if (lookup.Contains(resposta.Id))
-                resposta.SubRespostas = lookup[resposta.Id].ToList();
+                DynamicSetPropertyValue(resposta, "SubRespostas", lookup[resposta.Id].ToList());
         }
 
         List<Resposta> arvore = todasRespostas.Where(c => c.RespostaPaiId == null).ToList();

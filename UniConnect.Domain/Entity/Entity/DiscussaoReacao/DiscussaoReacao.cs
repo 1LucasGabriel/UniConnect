@@ -4,10 +4,10 @@ namespace UniConnect.Domain.Entity
 {
     public class DiscussaoReacao : BaseEntity<DiscussaoReacao>
     {
-        public int DiscussaoId { get; set; }
-        public TipoReacao Tipo { get; set; }
+        public int DiscussaoId { get; private set; }
+        public TipoReacao Tipo { get; private set; }
 
-        public Discussao Discussao { get; set; }
+        public Discussao Discussao { get; private set; }
 
         public DiscussaoReacao() { }
 

@@ -5,12 +5,12 @@ namespace UniConnect.Argument.Argument;
 
 public class InputCreateUsuario : BaseInputCreate<InputCreateUsuario>
 {
-    public string Nome { get; set; }
-    public string Email { get; set; }
-    public string Telefone { get; set; }
-    public string Senha { get; set; }
-    public string FotoPerfilUrl { get; set; }
-    public TipoUsuario TipoUsuario { get; set; }
+    public string Nome { get; private set; }
+    public string Email { get; private set; }
+    public string Telefone { get; private set; }
+    public string Senha { get; private set; }
+    public string FotoPerfilUrl { get; private set; }
+    public TipoUsuario TipoUsuario { get; private set; }
 
     [JsonConstructor]
     public InputCreateUsuario(string nome, string email, string telefone, string senha, string fotoPerfilUrl, TipoUsuario tipoUsuario)

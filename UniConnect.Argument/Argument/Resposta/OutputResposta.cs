@@ -6,8 +6,8 @@ public class OutputResposta : BaseOutput<OutputResposta>
     public int? RespostaPaiId { get; private set; }
     public string Conteudo { get; private set; }
 
-    public ICollection<OutputResposta>? SubRespostas { get; set; }
-    public ICollection<OutputRespostaReacao>? Reacoes { get; set; }
+    public ICollection<OutputResposta>? SubRespostas { get; private set; }
+    public ICollection<OutputRespostaReacao>? Reacoes { get; private set; }
 
     public OutputResposta() { }
 

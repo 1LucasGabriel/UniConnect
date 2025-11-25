@@ -14,7 +14,7 @@ public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
     {
         List<Usuario> listEncryptedUser = (from i in listEntity
                                            let encrypitedPassword = EncryptionHandler.Encrypt(i.Senha)
-                                           let setValue = i.Senha = encrypitedPassword
+                                           let setValue = DynamicSetPropertyValue(i, "Senha", encrypitedPassword)
                                            select i).ToList();
 
         return base.CreateMultiple(listEncryptedUser);
@@ -26,7 +26,7 @@ public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
         if (usuario == null)
             return null;
 
-        usuario.Senha = EncryptionHandler.Decrypt(usuario.Senha);
+        DynamicSetPropertyValue(usuario, "Senha", EncryptionHandler.Decrypt(usuario.Senha));
         return usuario;
     }
 }

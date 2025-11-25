@@ -2,13 +2,13 @@
 {
     public class Arquivo : BaseEntity<Arquivo>
     {
-        public string Nome { get; set; }
-        public string Tipo { get; set; }
-        public string Url { get; set; }
-        public long TamanhoBytes { get; set; }
-        public int PastaEstudoId { get; set; }
+        public string Nome { get; private set; }
+        public string Tipo { get; private set; }
+        public string Url { get; private set; }
+        public long TamanhoBytes { get; private set; }
+        public int PastaEstudoId { get; private set; }
 
-        public PastaEstudo PastaEstudo { get; set; }
+        public PastaEstudo PastaEstudo { get; private set; }
 
         public Arquivo() { }
 
