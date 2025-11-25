@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using UniConnect.Domain;
+using UniConnect.Domain.Entity;
 using UniConnect.Domain.Interface.Repository.Repository;
 using UniConnect.Domain.Interface.Service;
 using UniConnect.Domain.Service;
@@ -82,8 +83,22 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddTransient<IPastaEstudoRepository, PastaEstudoRepository>();
+builder.Services.AddTransient<IArquivoRepository, ArquivoRepository>();
+builder.Services.AddTransient<IDiscussaoRepository, DiscussaoRepository>();
+builder.Services.AddTransient<IRespostaRepository, RespostaRepository>();
+builder.Services.AddTransient<IDiscussaoReacaoRepository, DiscussaoReacaoRepository>();
+builder.Services.AddTransient<IRespostaReacaoRepository, RespostaReacaoRepository>();
+builder.Services.AddTransient<IMensagemRepository, MensagemRepository>();
 
 builder.Services.AddTransient<IUsuarioService, UsuarioService>();
+builder.Services.AddTransient<IPastaEstudoService, PastaEstudoService>();
+builder.Services.AddTransient<IArquivoService, ArquivoService>();
+builder.Services.AddTransient<IDiscussaoService, DiscussaoService>();
+builder.Services.AddTransient<IRespostaService, RespostaService>();
+builder.Services.AddTransient<IDiscussaoReacaoService, DiscussaoReacaoService>();
+builder.Services.AddTransient<IRespostaReacaoService, RespostaReacaoService>();
+builder.Services.AddTransient<IMensagemService, MensagemService>();
 builder.Services.AddTransient<IAuthenticateService, AuthenticateService>();
 
 builder.Services.AddCors(options =>

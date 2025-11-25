@@ -5,6 +5,8 @@ public abstract class BaseInputUpdate<TInputUpdate>
 {
     public int Id { get; set; }
 
+    public BaseInputUpdate() { }
+
     public BaseInputUpdate(int id)
     {
         Id = id;

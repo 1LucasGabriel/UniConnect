@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using UniConnect.Argument.Argument;
 using UniConnect.Argument.Base;
 using UniConnect.Domain.Entity;

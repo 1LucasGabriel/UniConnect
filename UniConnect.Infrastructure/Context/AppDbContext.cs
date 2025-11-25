@@ -32,5 +32,5 @@ public class AppDbContext : DbContext
     public DbSet<Resposta> Resposta { get; set; }
     public DbSet<DiscussaoReacao> DiscussaoReacao { get; set; }
     public DbSet<RespostaReacao> RespostaReacao { get; set; }
-    public DbSet<Mensagem> Mensagem  { get; set; }
+    public DbSet<Mensagem> Mensagem { get; set; }
 }
