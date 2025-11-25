@@ -1,4 +1,6 @@
-﻿namespace UniConnect.Domain.Entity;
+﻿using UniConnect.Argument.Cache;
+
+namespace UniConnect.Domain.Entity;
 
 public abstract class BaseEntity<TEntity>
     where TEntity : BaseEntity<TEntity>, new()
@@ -20,15 +22,19 @@ public abstract class BaseEntity<TEntity>
         return (TEntity)this;
     }
 
-    public TEntity SetCreationDate()
+    public TEntity SetCreationDate(Guid apiDataGuid)
     {
         DataCriacao = DateTime.Now;
+        UsuarioCriacaoId = ApiData.Get(apiDataGuid).UserId;
         return (TEntity)this;
     }
 
-    public TEntity SetChangeDate()
+    public TEntity SetChangeDate(Guid apiDataGuid)
     {
         DataAlteracao = DateTime.Now;
+        UsuarioAlteracaoId = ApiData.Get(apiDataGuid).UserId;
         return (TEntity)this;
     }
 }
+
+public class BaseEntity_0 : BaseEntity<BaseEntity_0> { }

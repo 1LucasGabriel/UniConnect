@@ -17,6 +17,9 @@ public abstract class BaseService<TRepository, TEntity, TInputCreate, TInputUpda
 {
     protected readonly TRepository _repository;
     protected readonly IMapper _mapper;
+    protected Guid _apiDataGuid;
+
+    public BaseService() { }
 
     public BaseService(TRepository repository, IMapper mapper)
     {
@@ -128,6 +131,15 @@ public abstract class BaseService<TRepository, TEntity, TInputCreate, TInputUpda
     #endregion
 
     #region Internal
+    public void SetGuid(Guid apiDataGuid)
+    {
+        _apiDataGuid = apiDataGuid;
+
+        // Replica o guid
+        if(_repository != null)
+            _repository.GetType().GetMethod("SetGuid")!.Invoke(_repository, [_apiDataGuid]);
+    }
+
     #region Internal
     protected TEntity? Convert(TOutput? output)
     {

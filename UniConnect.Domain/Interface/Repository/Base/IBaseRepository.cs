@@ -15,3 +15,5 @@ public interface IBaseRepository<TEntity>
     void Delete(TEntity? dto);
     void DeleteMultiple(List<TEntity>? dto);
 }
+
+public interface IBaseRepository_0 : IBaseRepository<BaseEntity_0> { }

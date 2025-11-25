@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using UniConnect.Api.Controller.Base;
+using UniConnect.Argument;
 using UniConnect.Argument.Argument;
 using UniConnect.Domain.Interface.Service;
 
@@ -7,14 +9,9 @@ namespace UniConnect.Api.Controller.Controller;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthenticateController : ControllerBase
+public class AuthenticateController : BaseController<IAuthenticateService, BaseInputCreate_0, BaseInputUpdate_0, BaseInputDelete_0, BaseOutput_0>
 {
-    private readonly IAuthenticateService _authenticateService;
-
-    public AuthenticateController(IAuthenticateService authenticateService)
-    {
-        _authenticateService = authenticateService;
-    }
+    public AuthenticateController(IAuthenticateService service) : base(service) { }
 
     [AllowAnonymous]
     [HttpPost("Authenticate")]
@@ -22,7 +19,7 @@ public class AuthenticateController : ControllerBase
     {
         try
         {
-            return Ok(_authenticateService.Authenticate(inputAuthenticate));
+            return Ok(_service.Authenticate(inputAuthenticate));
         }
         catch (KeyNotFoundException exception)
         {

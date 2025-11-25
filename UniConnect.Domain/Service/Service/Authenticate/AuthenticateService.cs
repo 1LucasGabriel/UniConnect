@@ -3,14 +3,16 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using UniConnect.Argument;
 using UniConnect.Argument.Argument;
 using UniConnect.Domain.Entity;
+using UniConnect.Domain.Interface.Repository;
 using UniConnect.Domain.Interface.Repository.Repository;
 using UniConnect.Domain.Interface.Service;
 
 namespace UniConnect.Domain.Service;
 
-public class AuthenticateService : IAuthenticateService
+public class AuthenticateService : BaseService<IBaseRepository_0, BaseEntity_0, BaseInputCreate_0, BaseInputUpdate_0, BaseInputDelete_0, BaseOutput_0>, IAuthenticateService
 {
     private readonly IConfiguration _configuration;
     private readonly IUsuarioRepository _usuarioRepository;

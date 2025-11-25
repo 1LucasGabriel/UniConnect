@@ -4,7 +4,6 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using UniConnect.Domain;
-using UniConnect.Domain.Entity;
 using UniConnect.Domain.Interface.Repository.Repository;
 using UniConnect.Domain.Interface.Service;
 using UniConnect.Domain.Service;
@@ -13,7 +12,6 @@ using UniConnect.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -113,14 +111,16 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Habilitar Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
+    });
 }
 
-// 🚨 CORS TEM QUE VIR AQUI
 app.UseCors("AllowAll");
 
 app.UseAuthentication();

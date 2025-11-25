@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using UniConnect.Argument;
+using UniConnect.Argument.Cache;
 using UniConnect.Domain.Interface.Service;
 
 namespace UniConnect.Api.Controller.Base;
@@ -8,7 +12,7 @@ namespace UniConnect.Api.Controller.Base;
 [ApiController]
 [Route("api/v1/[controller]")]
 [Authorize]
-public class BaseController<TService, TInputCreate, TInputUpdate, TInputDelete, TOutput> : ControllerBase
+public class BaseController<TService, TInputCreate, TInputUpdate, TInputDelete, TOutput> : ControllerBase, IActionFilter
     where TService : IBaseService<TInputCreate, TInputUpdate, TInputDelete, TOutput>
     where TInputCreate : BaseInputCreate<TInputCreate>
     where TInputUpdate : BaseInputUpdate<TInputUpdate>
@@ -17,10 +21,45 @@ public class BaseController<TService, TInputCreate, TInputUpdate, TInputDelete, 
 {
 
     protected readonly TService _service;
+    protected Guid _apiDataGuid;
 
     public BaseController(TService service)
     {
         _service = service;
+    }
+
+    [NonAction]
+    public void OnActionExecuting(ActionExecutingContext context)
+    {
+        string? authorizationHeader = context.HttpContext.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!string.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            try
+            {
+                string? token = authorizationHeader.Substring("Bearer ".Length).Trim();
+                JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+
+                JwtSecurityToken jwtToken = handler.ReadJwtToken(token);
+                Claim subClaim = jwtToken.Claims.First(c => c.Type == JwtRegisteredClaimNames.Sub);
+
+                int userId = int.Parse(subClaim.Value);
+                _apiDataGuid = ApiData.Add(new ApiDataContent(userId));
+
+                // Replica o guid
+                _service.GetType().GetMethod("SetGuid")!.Invoke(_service, [_apiDataGuid]);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Token inválido - {ex.Message}");
+            }
+        }
+    }
+
+    [NonAction]
+    public void OnActionExecuted(ActionExecutedContext context)
+    {
+        ApiData.Remove(_apiDataGuid);
     }
 
     #region Create
