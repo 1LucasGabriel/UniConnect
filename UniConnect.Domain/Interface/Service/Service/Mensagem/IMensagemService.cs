@@ -3,4 +3,7 @@ using UniConnect.Argument.Base;
 
 namespace UniConnect.Domain.Interface.Service;
 
-public interface IMensagemService : IBaseService<InputCreateMensagem, InputUpdateMensagem, InputGenericDelete, OutputMensagem> { }
+public interface IMensagemService : IBaseService<InputCreateMensagem, InputUpdateMensagem, InputGenericDelete, OutputMensagem>
+{
+    List<OutputMensagem> GetConversaByUsuarioId(int usuarioDestinoId);
+}

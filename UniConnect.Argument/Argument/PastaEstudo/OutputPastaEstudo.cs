@@ -9,6 +9,8 @@ public class OutputPastaEstudo : BaseOutput<OutputPastaEstudo>
     public string Descricao { get; private set; }
     public TipoVisibilidade Visibilidade { get; private set; }
 
+    public OutputPastaEstudo? PastaPai { get; set; }
+
     public OutputPastaEstudo() { }
 
     public OutputPastaEstudo(int? pastaEstudoPaiId, string titulo, string descricao, TipoVisibilidade visibilidade)

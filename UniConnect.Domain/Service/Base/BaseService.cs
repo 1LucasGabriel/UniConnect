@@ -136,7 +136,7 @@ public abstract class BaseService<TRepository, TEntity, TInputCreate, TInputUpda
         _apiDataGuid = apiDataGuid;
 
         // Replica o guid
-        if(_repository != null)
+        if (_repository != null)
             _repository.GetType().GetMethod("SetGuid")!.Invoke(_repository, [_apiDataGuid]);
     }
 

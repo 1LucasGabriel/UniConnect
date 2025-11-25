@@ -3,4 +3,7 @@ using UniConnect.Argument.Base;
 
 namespace UniConnect.Domain.Interface.Service;
 
-public interface IArquivoService : IBaseService<InputCreateArquivo, InputUpdateArquivo, InputGenericDelete, OutputArquivo> { }
+public interface IArquivoService : IBaseService<InputCreateArquivo, InputUpdateArquivo, InputGenericDelete, OutputArquivo>
+{
+    List<OutputArquivo> GetArquivosByPastaEstudoId(int pastaEstudoId);
+}

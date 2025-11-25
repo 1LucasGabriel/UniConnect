@@ -6,6 +6,8 @@ public class OutputDiscussao : BaseOutput<OutputDiscussao>
     public string Titulo { get; private set; }
     public string Conteudo { get; private set; }
 
+    public OutputDiscussao? DiscussaoPai { get; set; }
+
     public OutputDiscussao() { }
 
     public OutputDiscussao(int? discussaoPaiId, string titulo, string conteudo)

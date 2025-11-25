@@ -30,4 +30,47 @@ public class AuthenticateController : BaseController<IAuthenticateService, BaseI
             return BadRequest(exception.Message);
         }
     }
+
+    #region Ignore
+    [NonAction]
+    public override IActionResult Create(BaseInputCreate_0 inputCreate)
+    {
+        throw new NotImplementedException();
+    }
+    [NonAction]
+    public override IActionResult CreateMultiple(List<BaseInputCreate_0> listInputCreate)
+    {
+        throw new NotImplementedException();
+    }
+    [NonAction]
+    public override IActionResult Update(BaseInputUpdate_0 inputUpdate)
+    {
+        throw new NotImplementedException();
+    }
+    [NonAction]
+    public override IActionResult UpdateMultiple(List<BaseInputUpdate_0> listInputUpdate)
+    {
+        throw new NotImplementedException();
+    }
+    [NonAction]
+    public override IActionResult Delete(BaseInputDelete_0 inputDelete)
+    {
+        throw new NotImplementedException();
+    }
+    [NonAction]
+    public override IActionResult DeleteMultiple(List<BaseInputDelete_0> listInputDelete)
+    {
+        throw new NotImplementedException();
+    }
+    [NonAction]
+    public override ActionResult<BaseOutput_0> Get(int id)
+    {
+        throw new NotImplementedException();
+    }
+    [NonAction]
+    public override ActionResult<List<BaseOutput_0>> GetAll()
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
 }
