@@ -13,9 +13,11 @@ public static class ApiData
         return newGuid;
     }
 
-    public static ApiDataContent Get(Guid apiDataGuid)
+    public static ApiDataContent? Get(Guid apiDataGuid)
     {
-        return _dictionary[apiDataGuid];
+        _dictionary.TryGetValue(apiDataGuid, out ApiDataContent? value);
+        
+        return value;
     }
 
     public static void Remove(Guid apiDataGuid)

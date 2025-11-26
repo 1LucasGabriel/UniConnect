@@ -1,4 +1,6 @@
-﻿namespace UniConnect.Argument;
+﻿using System.Text.Json.Serialization;
+
+namespace UniConnect.Argument;
 
 public abstract class BaseInputUpdate<TInputUpdate>
     where TInputUpdate : BaseInputUpdate<TInputUpdate>
@@ -7,6 +9,7 @@ public abstract class BaseInputUpdate<TInputUpdate>
 
     public BaseInputUpdate() { }
 
+    [JsonConstructor]
     public BaseInputUpdate(int id)
     {
         Id = id;

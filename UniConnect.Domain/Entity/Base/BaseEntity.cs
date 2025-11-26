@@ -25,14 +25,14 @@ public abstract class BaseEntity<TEntity>
     public TEntity SetCreationDate(Guid apiDataGuid)
     {
         DataCriacao = DateTime.Now;
-        UsuarioCriacaoId = ApiData.Get(apiDataGuid).UserId;
+        UsuarioCriacaoId = ApiData.Get(apiDataGuid)?.UserId ?? 0;
         return (TEntity)this;
     }
 
     public TEntity SetChangeDate(Guid apiDataGuid)
     {
         DataAlteracao = DateTime.Now;
-        UsuarioAlteracaoId = ApiData.Get(apiDataGuid).UserId;
+        UsuarioAlteracaoId = ApiData.Get(apiDataGuid)?.UserId;
         return (TEntity)this;
     }
 }
